@@ -25,8 +25,15 @@ export class DataTableComponent implements OnInit {
   getData() {
     this.tableDataService.getData()
       .subscribe(data => {
-        this.allData = data.hits;
-        this.tableData = data.hits;
+        this.allData = data.hits.map(item => {
+          return {
+            title: item.title,
+            url: item.url,
+            createdAt: item.created_at,
+            author: item.author
+          };
+        });
+        this.tableData = this.allData;
       });
   }
 
