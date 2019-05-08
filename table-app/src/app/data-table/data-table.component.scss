@@ -1,0 +1,16 @@
+.table {
+  width: 90%;
+  border-collapse: collapse;
+  border: solid 1px #ddd;
+
+  &__tr {
+    &:hover {
+      background: #eee;
+    }
+  }
+
+  &__td {
+    border: solid 1px #ddd;
+    padding: 5px 10px;
+  }
+}
